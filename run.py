@@ -6,11 +6,10 @@ import re
 import urllib2
 import urllib
 import cookielib
-import urllib2
-import Image
 import cStringIO
-#import pytesseract
 import time
+
+import Image
 import MySQLdb
 from PIL import Image
 
@@ -18,6 +17,7 @@ reload(sys)
 sys.setdefaultencoding("utf8")
 
 loginurl = 'http://jwc.sut.edu.cn/ACTIONLOGON.APPPROCESS'
+
 
 class SutJWC(object):
     
@@ -143,6 +143,7 @@ class SutJWC(object):
         for each in self.allinfo:
             cursor.execute((sql % each['id'], each['name'],  each['sex'],  each['year'],  each['nation'],  each['city'],  each['sid'],  each['major'],  each['class']).encode("UTF-8"))
         db.close()
+
 
 if __name__ == '__main__':
     username = '*****'
